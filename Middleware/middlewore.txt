@@ -1,0 +1,30 @@
+>Los middleware: esta son funciones que se le pasan 
+al objecto de express para dotarlo de mayor funcionalidad 
+a la hora de manipular las rutas. 
+
+Tres formas de utilizar middleware
+
+* Primera de manera global
+    var app = express()
+    app.use(myMiddleware)
+
+    //your normal route Handlers
+    app.get('/someroute', handler)
+
+* Segunda forma 
+    solo en una ruta especifica
+    app.use('/withmiddleware', myMiddleware)
+
+* tercera forma es como segundo argumento de la ruta
+    app.get('/someroute', [myMiddleware], handler)
+
+Importancia de uso: 
+    1. Recuperar objetos importantes de una base de datos.
+    2. Autentificacion: para tener el objecto autentificado en todas las rutas
+    3. Registro: para saber las ultimas actividades del usuario registrado.
+    
+
+
+
+
+
